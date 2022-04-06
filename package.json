@@ -3,9 +3,9 @@
   "version": "2.8.1",
   "license": "MIT",
   "author": {
-    "name": "Yassine Fathi",
+    "name": "Cedric Deege",
     "url": "https://m4tt72.com",
-    "email": "hi@m4tt72.com"
+    "email": "cedric@deege.de"
   },
   "scripts": {
     "start": "next start",
