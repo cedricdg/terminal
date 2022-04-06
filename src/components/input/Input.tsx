@@ -16,7 +16,7 @@ export const Input = ({
   setLastCommandIndex,
   clearHistory,
 }) => {
-  const { trackEvent } = useMatomo();
+  // const { trackEvent } = useMatomo();
   const onSubmit = async (event: React.KeyboardEvent<HTMLInputElement>) => {
     const commands: [string] = history
       .map(({ command }) => command)
@@ -51,7 +51,7 @@ export const Input = ({
 
       await shell(history, command, setHistory, clearHistory, setCommand);
 
-      trackEvent({ category: 'Command Executed', action: command });
+      // trackEvent({ category: 'Command Executed', action: command });
 
       containerRef.current.scrollTo(0, containerRef.current.scrollHeight);
     }

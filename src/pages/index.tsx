@@ -16,8 +16,6 @@ interface IndexPageProps {
 }
 
 const IndexPage: React.FC<IndexPageProps> = ({ version, quote, inputRef }) => {
-  const { trackPageView } = useMatomo();
-
   const containerRef = React.useRef(null);
   const {
     history,
@@ -32,10 +30,6 @@ const IndexPage: React.FC<IndexPageProps> = ({ version, quote, inputRef }) => {
   const init = React.useCallback(() => setHistory(banner()), []);
 
   React.useEffect(() => {
-    trackPageView({});
-  }, []);
-
-  React.useEffect(() => {
     init();
   }, [init]);
 
@@ -48,11 +42,11 @@ const IndexPage: React.FC<IndexPageProps> = ({ version, quote, inputRef }) => {
   return (
     <>
       <Head>
-        <title>M4TT72 | Home</title>
+        <title>Cedric Deege | Home</title>
       </Head>
 
-      <div className="p-8 overflow-hidden h-full border-2 rounded border-light-yellow dark:border-dark-yellow">
-        <div ref={containerRef} className="overflow-y-auto h-full">
+      <div className="h-full p-8 overflow-hidden border-2 rounded border-light-yellow dark:border-dark-yellow">
+        <div ref={containerRef} className="h-full overflow-y-auto">
           <History history={history} />
 
           <Input

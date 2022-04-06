@@ -5,15 +5,18 @@ import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react';
 
 const App = ({ Component, pageProps }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
-  const instance = createInstance({
-    urlBase: 'https://a.m4tt72.xyz',
-    trackerUrl: 'https://a.m4tt72.xyz/js/',
-    srcUrl: 'https://a.m4tt72.xyz/js/',
-    siteId: 1,
-    configurations: {
-      setRequestMethod: 'GET',
-    },
-  });
+  const instance = {} as any;
+  //  createInstance({
+  //   // urlBase: 'https://a.m4tt72.xyz',
+  //   // trackerUrl: 'https://a.m4tt72.xyz/js/',
+  //   // srcUrl: 'https://a.m4tt72.xyz/js/',
+  //   // siteId: 1,
+  //   // configurations: {
+  //   //   setRequestMethod: 'GET',
+  //   // },
+  //   siteId: 1,
+  //   urlBase: null,
+  // });
 
   const onClickAnywhere = () => {
     inputRef.current.focus();
@@ -31,10 +34,10 @@ const App = ({ Component, pageProps }) => {
 
       <MatomoProvider value={instance}>
         <div
-          className="text-light-foreground dark:text-dark-foreground min-w-max text-xs md:min-w-full md:text-base"
+          className="text-xs text-light-foreground dark:text-dark-foreground min-w-max md:min-w-full md:text-base"
           onClick={onClickAnywhere}
         >
-          <main className="bg-light-background dark:bg-dark-background w-full h-full p-2">
+          <main className="w-full h-full p-2 bg-light-background dark:bg-dark-background">
             <Component {...pageProps} inputRef={inputRef} />
           </main>
         </div>
